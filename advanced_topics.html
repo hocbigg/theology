@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Advanced Topics in Theology</title>
+  <meta name="description" content="Advanced Topics in Theology curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/theology/advanced_topics.html">
+  <meta property="og:title" content="Advanced Topics in Theology">
+  <meta property="og:description" content="Advanced Topics in Theology curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/theology/advanced_topics.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/theology/">Theology</a></li>
+      <li><a href="/theology/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="https://github.com/hocbigg/theology" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+
+<h1 id="advanced-topics-in-theology">Advanced Topics in Theology</h1>
+<p>The following specialization tracks are designed for learners who have completed the core curriculum and wish to pursue advanced subdisciplines within theological inquiry. Learners are encouraged to select one or two tracks that align with their intellectual or ministerial interests rather than attempting to complete all tracks sequentially.</p>
+<ul>
+<li><strong>Historical Theology and Patristics</strong> - Traces the development and formalization of doctrine through early patristic councils, medieval scholastic synthesis, Byzantine theology, and the Protestant Reformation.</li>
+<li><strong>Biblical Studies and Advanced Hermeneutics</strong> - Investigates manuscript textual criticism, canonical biblical theology across both testaments, and the theological interpretation of Scripture.</li>
+<li><strong>Philosophical Theology and Analytic Apologetics</strong> - Utilizes contemporary analytic philosophy to interrogate divine attributes, religious epistemology, creaturely freedom, and the problem of evil.</li>
+<li><strong>Practical Theology, Ethics, and Public Life</strong> - Examines the application of theological anthropology and dogmatics to moral theory, political order, modern bioethics, and global mission.</li>
+</ul>
+<h2 id="historical-theology-and-patristics">Historical Theology and Patristics</h2>
+<p>Traces the development and formalization of doctrine through early patristic councils, medieval scholastic synthesis, Byzantine theology, and the Protestant Reformation.</p>
+<p>Early Church Fathers and Creedal Development: <a href="https://books.google.com/books?isbn=9780826452528" target="_blank" rel="noopener noreferrer">Early Christian Doctrines (J. N. D. Kelly)</a> - The classic academic standard that details the development of Trinitarian and Christological dogmas from the close of the apostolic age through the Council of Chalcedon.</p>
+<p>Medieval Scholasticism and Thomistic Thought: <a href="https://aquinas101.thomisticinstitute.org/" target="_blank" rel="noopener noreferrer">Aquinas 101 (The Thomistic Institute)</a> - A free, structured multimedia learning platform that breaks down the philosophical metaphysics, moral theory, and dogmatic structures of Thomas Aquinas's <em>Summa Theologiae</em>.</p>
+<p>Reformation and Confessional Theology: The Reformation (Carl R. Trueman / The Master's Seminary) - search "The Reformation Dr Carl Trueman 2017 Winterim" on YouTube - A complete 19-part seminary lecture series exploring the historical, social, and doctrinal debates that precipitated the Protestant Reformation and subsequent confessions.</p>
+<p>Eastern Orthodox Historical Theology: <a href="https://books.google.com/books?isbn=9780913836316" target="_blank" rel="noopener noreferrer">The Mystical Theology of the Eastern Church (Vladimir Lossky)</a> - A seminal work of twentieth-century historical theology exploring the apophatic method, the essence-energies distinction, and the doctrine of theosis in the Greek Patristic tradition.</p>
+<h2 id="biblical-studies-and-advanced-hermeneutics">Biblical Studies and Advanced Hermeneutics</h2>
+<p>Investigates manuscript textual criticism, canonical biblical theology across both testaments, and the theological interpretation of Scripture.</p>
+<p>New Testament Textual Criticism: <a href="https://www.biblicaltraining.org/learn/academy/nt313-introduction-to-textual-criticism" target="_blank" rel="noopener noreferrer">Introduction to Textual Criticism (Daniel B. Wallace / BiblicalTraining)</a> - A free 36-lesson video course by a leading textual critic that explains manuscript families, scribal error habits, and internal and external transcriptional probabilities.</p>
+<p>Theological Interpretation and Philosophical Hermeneutics: <a href="https://books.google.com/books?isbn=9780801039775" target="_blank" rel="noopener noreferrer">Introducing Biblical Hermeneutics: A Comprehensive Framework for Hearing God in Scripture (Craig G. Bartholomew)</a> - A comprehensive treatment integrating modern literary theory, philosophical epistemology, and historical criticism into an ecclesial reading of the canon.</p>
+<p>Old Testament Biblical Theology: <a href="https://books.google.com/books?isbn=9780830825615" target="_blank" rel="noopener noreferrer">Old Testament Theology: Israel's Gospel (John Goldingay)</a> - The opening volume of a landmark three-volume project that approaches Old Testament theology through its narrative storyline, theological convictions, and ethical lifestyle.</p>
+<p>New Testament Biblical Theology: <a href="https://books.google.com/books?isbn=9780801026973" target="_blank" rel="noopener noreferrer">A New Testament Biblical Theology: The Unfolding of the Old Testament in the New (G. K. Beale)</a> - An exhaustive study examining how the New Testament authors organically expand, interpret, and fulfill Old Testament redemptive-historical motifs in Christ.</p>
+<h2 id="philosophical-theology-and-analytic-apologetics">Philosophical Theology and Analytic Apologetics</h2>
+<p>Utilizes contemporary analytic philosophy to interrogate divine attributes, religious epistemology, creaturely freedom, and the problem of evil.</p>
+<p>Epistemology of Religion: <a href="https://books.google.com/books?isbn=9780195131925" target="_blank" rel="noopener noreferrer">Warranted Christian Belief (Alvin Plantinga)</a> - The seminal treatise in Reformed epistemology that establishes how theistic belief can constitute warranted knowledge without inferential evidential proof.</p>
+<p>Divine Foreknowledge and Human Freedom: <a href="https://books.google.com/books?isbn=9780830826858" target="_blank" rel="noopener noreferrer">Divine Foreknowledge: 4 Views (James K. Beilby and Paul R. Eddy, eds.)</a> - A multi-perspective academic debate between prominent philosophers defending Open Theism, Molinism, Simple Foreknowledge, and Thomistic/Calvinistic theological determinism.</p>
+<p>The Problem of Evil: <a href="https://books.google.com/books?isbn=9780199245604" target="_blank" rel="noopener noreferrer">The Problem of Evil (Peter van Inwagen)</a> - Delivered as the Oxford Gifford Lectures, this text provides a rigorous analytic formulation of modal defenses and the limits of philosophical theodicy.</p>
+<p>Analytic Dogmatics and Christology: <a href="https://books.google.com/books?isbn=9780199600427" target="_blank" rel="noopener noreferrer">Analytic Theology: New Essays in the Philosophy of Theology (Oliver D. Crisp and Michael C. Rea, eds.)</a> - The foundational collection that defines analytic theology as a methodological discipline, applying logical precision and semantic clarity to classical theological dogmas.</p>
+<h2 id="practical-theology-ethics-and-public-life">Practical Theology, Ethics, and Public Life</h2>
+<p>Examines the application of theological anthropology and dogmatics to moral theory, political order, modern bioethics, and global mission.</p>
+<p>Christian Ethics and Moral Theory: Introduction to Christian Ethics (Jennifer A. Herdt / Yale Divinity School) - search "Introduction to Christian Ethics Jennifer Herdt Yale Divinity School" on YouTube - A 24-lecture university course examining virtue ethics, divine commands, natural law, and contemporary moral debates through historical and modern sources.</p>
+<p>Political Theology: <a href="https://books.google.com/books?isbn=9780521568401" target="_blank" rel="noopener noreferrer">The Desire of the Nations: Rediscovering the Roots of Political Theology (Oliver O'Donovan)</a> - A foundational academic exploration of how the biblical concept of God's rule informs authority, judgment, and political structures in the post-Christendom era.</p>
+<p>Christian Bioethics and Medicine: <a href="https://books.google.com/books?isbn=9780802878168" target="_blank" rel="noopener noreferrer">Bioethics: A Primer for Christians (Gilbert Meilaender)</a> - A focused theological framework applying Christian anthropology to contemporary questions of genetic therapy, assisted reproduction, organ donation, and end-of-life care.</p>
+<p>Global Missiology and Ecclesiology: <a href="https://books.google.com/books?isbn=9780830825714" target="_blank" rel="noopener noreferrer">The Mission of God: Unlocking the Bible's Grand Narrative (Christopher J. H. Wright)</a> - A comprehensive work that reframes biblical theology and ecclesiological purpose around God's holistic, global mission to redeem human society and creation.</p>
+    </article>
+  </main>
+
+</body>
+</html>
